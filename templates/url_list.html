@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block title %}URL List{% endblock %}
+{% block body %}
+<h2>URL List</h2>
+<ul>
+    {% for short_id, url_target in urls.items() %}
+        <li>
+            <p><a href="{{ url_target }}">{{ short_id}}</a></p>
+            <p><a href="/{{ short_id }}_details">Details</a></p>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
